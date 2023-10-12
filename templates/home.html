@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+<h1> Home page</h2>
+	
+
+{% block scripts %}
+	{{ block.super }}
+	<script src="{% static 'js/home.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+{% include "navbar.html" %}
+<div class="container mt-5">
+	<h4 class="card-title mt-3 text-center">Knowledge Based Wiki</h4>
+	<div class="row">
+	<div class="col-6">
+		<table class="table table-dark table-striped">
+			<thead>
+			<tr>
+			  <th>Topic</th>
+			  <th>Article</th>
+			</tr>
+			</thead>
+			<tbody>
+			{% for t in topics %}
+			<tr>
+			  <th> {{ t.topic }}</th>
+			  <div class = "post_body">
+			  <th> {{ t.article|safe|truncatewords:"50"|linebreaks }}
+			  </th>
+			</div>
+			</tr> 
+			{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	<div class="col-6">
+		<div class="form-group input-group">
+			<div class="input-group-prepend">
+				<span class="input-group-text"> <i class="fa fa-text"></i> </span>
+			 </div>
+			<input name="topic" id="topic" class="form-control topic" placeholder="Please Enter Topic" type="text">
+		</div>
+		<div class="form-group input-group">
+			<div class="input-group-prepend">
+				<span class="input-group-text"> <i class="fa fa-textarea"></i> </span>
+			 </div>
+			<textarea name="article" id="article" class="form-control article" placeholder="Please Enter Article" type="text"></textarea>
+		</div>
+		<div class="form-group">
+			<button type="submit" class="btn btn-outline-success" id="wiki_info_submit"> Save  </button>
+		</div> 
+	</div>
+</div>
+</div>
+{% endblock %}
+

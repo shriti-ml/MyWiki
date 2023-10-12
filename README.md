@@ -82,7 +82,6 @@ Now you are good to go.
 
 ### 9. URLs
 #### Signup: [http://localhost:8000/signup](http://localhost:8000/signup)
-![](https://i.imgur.com/T1KkfXi.png)
 #### Login: [http://localhost:8000/login](http://localhost:8000/login)
 #### Logout: [http://localhost:8000/logout](http://localhost:8000/logout)
 #### WikiInfo: [http://localhost:8000/](http://localhost:8000/)

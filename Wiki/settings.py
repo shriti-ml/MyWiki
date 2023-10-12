@@ -140,10 +140,3 @@ AUTH_USER_MODEL = 'UserWiki.User'
 # login URL
 LOGIN_URL = 'signup'
 
-# email configurations
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'xxxx'
-EMAIL_HOST_PASSWORD = 'xxxx'
-EMAIL_PORT = 587
-

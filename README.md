@@ -1,4 +1,4 @@
-# simple-django-project
+# Knowledge Based WikiPedia
 ## Installation
 
 ### Prerequisites
@@ -27,12 +27,12 @@ source envs/bin/activate
 
 #### 4. Clone git repository
 ```bash
-git clone "https://github.com/Manisha-Bayya/simple-django-project.git"
+git clone "https://github.com/shriti-ml/MyWiki.git"
 ```
 
 #### 5. Install requirements
 ```bash
-cd simple-django-project/
+cd MyWiki/
 pip install -r requirements.txt
 ```
 
@@ -49,28 +49,20 @@ mysql> exit;
 #### 7. Edit project settings
 ```bash
 # open settings file
-vim panorbit/settings.py
+vim Wiki/settings.py
 
 # Edit Database configurations with your MySQL configurations.
 # Search for DATABASES section.
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'world',
+        'NAME': 'UserWiki',
         'USER': '<mysql-user>',
         'PASSWORD': '<mysql-password>',
         'HOST': '<mysql-host>',
         'PORT': '<mysql-port>',
     }
 }
-
-# Edit email configurations.
-# Search for email configurations
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = '<your-email>'
-EMAIL_HOST_PASSWORD = '<your-email-password>'
-EMAIL_PORT = 587
 
 # save the file
 ```
@@ -80,25 +72,17 @@ EMAIL_PORT = 587
 python manage.py makemigrations
 python manage.py migrate
 
-# For search feature we need to index certain tables to the haystack. For that run below command.
-python manage.py rebuild_index
-
 # Run the server
 python manage.py runserver 0:8001
 
 # your server is up on port 8001
 ```
-Try opening [http://localhost:8001](http://localhost:8001) in the browser.
+Try opening [http://localhost:8000](http://localhost:8000) in the browser.
 Now you are good to go.
 
 ### 9. URLs
-#### Signup: [http://localhost:8001/signup](http://localhost:8001/signup)
+#### Signup: [http://localhost:8000/signup](http://localhost:8000/signup)
 ![](https://i.imgur.com/T1KkfXi.png)
-#### Login: [http://localhost:8001/login](http://localhost:8001/login)
-![](https://i.imgur.com/KvyiuU6.png)
-#### home for search: [http://localhost:8001/](http://localhost:8001/)
-![](https://i.imgur.com/234qAiS.png)
-#### country page: [http://localhost:8001/country/kenya](http://localhost:8001/country/kenya)
-![](https://i.imgur.com/3zh3YKd.png)
-#### Logout: [http://localhost:8001/logout](http://localhost:8001/logout)
-
+#### Login: [http://localhost:8000/login](http://localhost:8000/login)
+#### Logout: [http://localhost:8000/logout](http://localhost:8000/logout)
+#### WikiInfo: [http://localhost:8000/](http://localhost:8000/)
